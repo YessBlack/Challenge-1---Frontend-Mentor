@@ -1,0 +1,113 @@
+*,*::before,*::after{
+    box-sizing: border-box;
+    
+}
+:root {
+    --bg-principal: #0d1a2d;
+    --bg-card: #15273f;
+    --color-text-pri: #10eae9;
+    --color-description:#869cbc;
+    --color-text-sec: #ffffff;
+    --mg-ext: 20px;
+    --border-rad: 17px;
+    --mg-top: 1em;
+    --ln-height: 1.5em;
+}
+body {
+    background-color: var(--bg-principal);
+    font-family: 'Fira Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+}
+.container-card {   
+    margin-top: var(--mg-top);
+    background-color: var(--bg-card);
+    margin-left: var(--mg-ext);
+    margin-right: var(--mg-ext);
+    padding:var(--mg-ext);
+    border-radius: var(--border-rad);
+    line-height: var(--ln-height);
+    width: 300px;
+}
+.img-content-view .img-bg{
+    width: 260px;
+    border-radius: var(--border-rad);
+    display: inline-block;
+    position: absolute;
+}
+.title{
+    margin-top: 110%;
+    color: var(--color-text-sec);
+    font-weight: 500; 
+    font-size: 1.7em;
+}
+.color-sec {
+    color: var(--color-description);
+}
+.color-pri {
+    color: var(--color-text-sec);
+}
+.container-price-date {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1em;
+    border-bottom: .5px solid var(--color-description);
+}
+.price,.date{
+    display: flex;
+    align-items: center;
+}
+.text-price,.text-date {
+    color: var(--color-text-pri);
+    font-weight: 500;
+    padding-left: .5em;
+}
+.text-date {
+    color:var(--color-text-sec);
+    font-weight: unset;
+}
+.content-profile {
+    padding-top: .7em;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.content-profile img {
+    width: 50px;
+    border-radius: 50%;
+    border: 1px solid var(--color-text-sec);
+    margin-right: 1em;
+}
+.text-h:hover{
+    color: var(--color-text-pri);
+    cursor: pointer;
+}
+/*Efecto opacity en la imagen*/
+.effect {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    background-color: var(--color-text-pri);
+    border-radius: var(--border-rad);
+    opacity: 0;
+}
+/*icon view para no ser afectado por opacity*/
+.icon-view{
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-image: url(/img/icon-view.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    margin: -60% auto;
+    opacity: 0;
+}
+.effect:hover {
+    opacity: .6;
+    cursor: pointer;
+}
+.effect:hover + .icon-view {
+    opacity: 1;
+}
